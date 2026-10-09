@@ -1,0 +1,56 @@
+
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+// src/layouts/Layout.astro
+interface Props {
+    titulo: string;
+}
+
+const { titulo } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{titulo}</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/"><inicio>Inicio</inicio></a>
+                <a href="/talleres"><talleres>Talleres</talleres></a>
+                <a href="/nosotros"><nosotros>Nosotros</nosotros></a>
+
+            </nav>
+        </header>
+
+        <main>
+            <slot />
+        </main>
+
+        <footer>
+            <p>&copy; {new Date().getFullYear()} Espacio Cultural. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --color-primario: #333;
+    }
+    body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+</style>

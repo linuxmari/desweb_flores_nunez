@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TarjetaTaller from "../components/TarjetaTaller.astro";
+
+const talleres = [
+    {
+        nombre: "Fotografía",
+        descripcion:
+            "Introducción a la composición y técnicas de fotografía digital.",
+        imagen: "public/istockphoto-2203424023-612x612.jpg",
+    },
+    {
+        nombre: "Cerámica",
+        descripcion:
+            "Creación de objetos utilizando técnicas básicas de modelado.",
+        imagen: "public/clases_20200228_154005-1024x909.jpg",
+    },
+    {
+        nombre: "Escritura creativa",
+        descripcion: "Exploración de relatos breves y ejercicios de escritura.",
+        imagen: "public/8_Taller-_escritura_creativa.jpg",
+    },
+    {
+        nombre: "Ilustración",
+        descripcion:
+            "Desarrollo de habilidades de dibujo e ilustración digital.",
+        imagen: "public/62_Taller-inf_resultados05.jpg",
+    },
+];
+---
+
+<Layout titulo="Talleres | Espacio Cultural">
+    <section class="seccion">
+        <h1>Nuestros talleres</h1>
+        <p>
+            Ofrecemos talleres para distintos intereses y niveles. Elige el que
+            más te inspire.
+        </p>
+        <div class="grid">
+            {talleres.map((t) => <TarjetaTaller {...t} />)}
+        </div>
+    </section>
+</Layout>

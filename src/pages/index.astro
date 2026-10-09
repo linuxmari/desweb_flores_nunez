@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TarjetaTaller from "../components/TarjetaTaller.astro";
+
+const destacados = [
+    {
+        nombre: "Fotografía",
+        descripcion:
+            "Introducción a la composición y técnicas de fotografía digital.",
+        imagen: "public/fotografia.jpg"
+    },
+    {
+        nombre: "Cerámica",
+        descripcion:
+            "Creación de objetos utilizando técnicas básicas de modelado.",
+        imagen: "public/ceramica.jpg",
+    },
+    {
+        nombre: "Pintura",
+        descripcion:
+            "Desarrollo de habilidades de dibujo y pintura contemporánea.",
+        imagen: "public/Creación_de_Adán.jpg",
+    },
+];
+---
+
+<Layout titulo="Inicio | Espacio Cultural">
+    <section class="hero">
+        <h1>Bienvenidos a Espacio Cultural</h1>
+        <p>
+            Un lugar para aprender, crear y compartir. Descubre nuestros
+            talleres y actividades.
+        </p>
+    </section>
+
+    <section class="seccion">
+        <h2>Talleres destacados</h2>
+        <div class="grid">
+            {
+                destacados.map((t) => (
+                    <TarjetaTaller
+                        nombre={t.nombre}
+                        descripcion={t.descripcion}
+                        imagen={t.imagen}
+                    />
+                ))
+            }
+        </div>
+    </section>
+</Layout>

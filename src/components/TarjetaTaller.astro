@@ -1,0 +1,11 @@
+---
+const { nombre, descripcion, imagen } = Astro.props;
+---
+<article class="tarjeta">
+  <img src={imagen} alt={nombre} />
+  <div class="tarjeta-contenido">
+    <h3>{nombre}</h3>
+    <p>{descripcion}</p>
+  </div>
+</article>
+
